@@ -11,14 +11,15 @@
 The component is written using ES6/JSX therefore Babel is required to directly use it. The below example is based on using [webpack](http://webpack.github.io/) and [babel-loader](https://github.com/babel/babel-loader).
 ```js
 import { Component } from 'react';
-import OutsideClick from 'react-highlight-click';
+import HighlightClick from 'react-highlight-click';
 
 export default class Button extends Component {
   render() {
     return (
         <HighlightClick
-          className='dialog--container'>
-          <button>
+          className='button-container'>
+          <button
+            onClick={this.handleClick.bind(this)} >
             Submit
           </button>
         </HighlightClick>
