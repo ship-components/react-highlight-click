@@ -1,8 +1,10 @@
-engines:
-  eslint:
-    enabled: true
+languages:
+   Ruby: false
+   JavaScript: true
+   Python: false
+   PHP: false
 exclude_paths:
 - "Gruntfile.js"
-- "tasks/*/**"
-- "es5/*/**"
+- "tasks/*"
+- "es5/*"
 - "**-test.js"
