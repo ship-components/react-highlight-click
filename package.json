@@ -2,7 +2,7 @@
   "name": "react-highlight-click",
   "version": "0.1.0",
   "description": "Generates temporary click highlights",
-  "main": "src/HighlightClick.js",
+  "main": "es5/HighlightClick.js",
   "scripts": {
     "test": "jest src/ --verbose --coverage",
     "build": "npm test && grunt build"
@@ -38,7 +38,8 @@
     "jest-cli": "^0.5.8",
     "jit-grunt": "^0.9.1",
     "package-banner": "^0.1.0",
-    "react": "^0.13.3",
+    "react": "^0.14.0-rc1",
+    "react-dom": "^0.14.0-rc1",
     "webpack": "^1.12.1",
     "webpack-dev-server": "^1.10.1"
   },

@@ -7,6 +7,7 @@
 
 // Modules
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 export default class HighlightClick extends React.Component {
 
@@ -28,7 +29,7 @@ export default class HighlightClick extends React.Component {
    * @return {Object}
    */
   getRelativeClickPosition(el, event) {
-    el = el || React.findDOMNode(this);
+    el = el || ReactDOM.findDOMNode(this);
     let elOffset = HighlightClick.getElementOffset(el);
     return {
       top: event.pageY - elOffset.top,
@@ -42,7 +43,7 @@ export default class HighlightClick extends React.Component {
    * @return {[type]}       [description]
    */
   handleClick(event) {
-    let el = React.findDOMNode(this);
+    let el = ReactDOM.findDOMNode(this);
 
     // Figure out where the click is
     let click = this.getRelativeClickPosition(el, event);

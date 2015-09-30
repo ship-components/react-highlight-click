@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     options: {
       // Where to start
       entry: {
-        HighlightClick: './src/HighlightClick.js'
+        HighlightClick: './src/HighlightClick.jsx'
       },
 
       // Where to output
@@ -36,7 +36,8 @@ module.exports = function(grunt) {
       },
 
       externals: {
-        'react': true
+        'react': true,
+        'react-dom': true
       },
 
       stats: {
@@ -59,11 +60,6 @@ module.exports = function(grunt) {
             loader: 'babel'
           }
         ]
-      },
-
-      jshint: {
-        failOnHint: false,
-        esnext: true
       },
 
       resolve: {

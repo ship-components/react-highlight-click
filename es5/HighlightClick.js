@@ -87,6 +87,10 @@ module.exports =
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(2);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var HighlightClick = (function (_React$Component) {
 	  _inherits(HighlightClick, _React$Component);
 
@@ -120,7 +124,7 @@ module.exports =
 	  _createClass(HighlightClick, [{
 	    key: 'getRelativeClickPosition',
 	    value: function getRelativeClickPosition(el, event) {
-	      el = el || _react2['default'].findDOMNode(this);
+	      el = el || _reactDom2['default'].findDOMNode(this);
 	      var elOffset = HighlightClick.getElementOffset(el);
 	      return {
 	        top: event.pageY - elOffset.top,
@@ -136,7 +140,7 @@ module.exports =
 	  }, {
 	    key: 'handleClick',
 	    value: function handleClick(event) {
-	      var el = _react2['default'].findDOMNode(this);
+	      var el = _reactDom2['default'].findDOMNode(this);
 
 	      // Figure out where the click is
 	      var click = this.getRelativeClickPosition(el, event);
@@ -267,7 +271,7 @@ module.exports =
 	 * @static
 	 */
 	HighlightClick.propTypes = {
-	  onClick: _react2['default'].PropTypes.func.isRequired,
+	  onClick: _react2['default'].PropTypes.func,
 	  className: _react2['default'].PropTypes.string,
 	  tag: _react2['default'].PropTypes.string,
 	  size: _react2['default'].PropTypes.number,
@@ -292,6 +296,12 @@ module.exports =
 /***/ function(module, exports) {
 
 	module.exports = require("react");
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-dom");
 
 /***/ }
 /******/ ]);
