@@ -1,9 +1,10 @@
 jest.dontMock('../HighlightClick');
 
-import React from 'react/addons';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 
 const HighlightClick = require('../HighlightClick');
-const TestUtils = React.addons.TestUtils;
 const noOp = function() {};
 
 describe('HighlightClick', function() {
@@ -20,7 +21,7 @@ describe('HighlightClick', function() {
 
     let el = TestUtils.findRenderedDOMComponentWithTag(reactTree, tagName);
 
-    expect(React.findDOMNode(el).tagName.toLowerCase()).toEqual(tagName.toLowerCase());
+    expect(ReactDOM.findDOMNode(el).tagName.toLowerCase()).toEqual(tagName.toLowerCase());
   });
 
   it('should support custom css classes', function() {

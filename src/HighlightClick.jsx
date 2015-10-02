@@ -110,8 +110,8 @@ export default class HighlightClick extends React.Component {
       styles.height = this.props.size;
 
       // Center
-      styles.left = click.left - (this.props.size / 2);
-      styles.top = click.top - (this.props.size / 2);
+      styles.left = (click.left || 0) - (this.props.size / 2);
+      styles.top = (click.top || 0) - (this.props.size / 2);
 
       return (
         <div

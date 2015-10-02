@@ -215,8 +215,8 @@ module.exports =
 	        styles.height = _this.props.size;
 
 	        // Center
-	        styles.left = click.left - _this.props.size / 2;
-	        styles.top = click.top - _this.props.size / 2;
+	        styles.left = (click.left || 0) - _this.props.size / 2;
+	        styles.top = (click.top || 0) - _this.props.size / 2;
 
 	        return _react2['default'].createElement('div', {
 	          key: click.id,

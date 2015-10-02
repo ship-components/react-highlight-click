@@ -4,7 +4,7 @@
   "description": "Generates temporary click highlights",
   "main": "es5/HighlightClick.js",
   "scripts": {
-    "test": "jest src/ --verbose --coverage",
+    "test": "jest src/ --coverage",
     "build": "npm test && grunt build"
   },
   "repository": {
@@ -39,6 +39,7 @@
     "jit-grunt": "^0.9.1",
     "package-banner": "^0.1.0",
     "react": "^0.14.0-rc1",
+    "react-addons-test-utils": "^0.14.0-rc1",
     "react-dom": "^0.14.0-rc1",
     "webpack": "^1.12.1",
     "webpack-dev-server": "^1.10.1"
@@ -47,10 +48,12 @@
     "scriptPreprocessor": "node_modules/babel-jest",
     "testFileExtensions": [
       "es6",
+      "jsx",
       "js"
     ],
     "moduleFileExtensions": [
       "js",
+      "jsx",
       "json",
       "es6"
     ],
