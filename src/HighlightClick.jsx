@@ -23,6 +23,15 @@ export default class HighlightClick extends React.Component {
   }
 
   /**
+   * Clean up any async timeouts when we unount
+   */
+  componentWillUnmount() {
+    this.state.clicks.forEach((click) => {
+      clearTimeout(click.timeoutId);
+    });
+  }
+
+  /**
    * Figure out the relative position in the element where the user clicked
    * @param  {React}   el
    * @param  {Event}   event
@@ -51,6 +60,9 @@ export default class HighlightClick extends React.Component {
     // Ensure we have a unqiue id we can keep track of
     click.id = Date.now();
 
+    // Async remove click after it times out
+    click.timeoutId = setTimeout(this.removeClick.bind(this, click), this.props.timeout);
+
     // Clone to prevent accidently changes
     let clicks = this.state.clicks.slice(0);
 
@@ -61,9 +73,6 @@ export default class HighlightClick extends React.Component {
     this.setState({
       clicks: clicks
     });
-
-    // Clean it up after it's gone
-    setTimeout(this.removeClick.bind(this, click), this.props.timeout);
 
     if (typeof this.props.onClick === 'function') {
       this.props.onClick(event);
@@ -82,7 +91,6 @@ export default class HighlightClick extends React.Component {
     let index = clicks.findIndex((item) => item.id === click.id);
 
     if(index > -1) {
-
       // Remove it
       clicks.splice(index, 1);
 
@@ -130,7 +138,7 @@ export default class HighlightClick extends React.Component {
   render() {
     return (
       <this.props.tag
-        className={'highligh-click ' + (this.props.className ? this.props.className : ' ')}
+        className={'highligh-click' + (this.props.className ? ' ' + this.props.className : '')}
         onClick={this.handleClick.bind(this)}>
           {this.renderHighlights()}
 

@@ -5,7 +5,7 @@
  *  |  | \/\  ___/ / __ \\  \___|  |   /_____/ |   Y  \  / /_/  >   Y  \  |_|  / /_/  >   Y  \  |   /_____/ \  \___|  |_|  \  \___|    < 
  *  |__|    \___  >____  /\___  >__|           |___|  /__\___  /|___|  /____/__\___  /|___|  /__|            \___  >____/__|\___  >__|_ \
  *              \/     \/     \/                    \/  /_____/      \/       /_____/      \/                    \/             \/     \/
- * react-highlight-click 0.1.0
+ * react-highlight-click 0.1.1
  * Description: Generates temporary click highlights
  * Author: Isaac Suttell
  * Homepage: https://github.com/ship-components/react-highlight-click/issues#readme
@@ -115,13 +115,24 @@ module.exports =
 	   */
 
 	  /**
-	   * Figure out the relative position in the element where the user clicked
-	   * @param  {React}   el
-	   * @param  {Event}   event
-	   * @return {Object}
+	   * Clean up any async timeouts when we unount
 	   */
 
 	  _createClass(HighlightClick, [{
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.state.clicks.forEach(function (click) {
+	        clearTimeout(click.timeoutId);
+	      });
+	    }
+
+	    /**
+	     * Figure out the relative position in the element where the user clicked
+	     * @param  {React}   el
+	     * @param  {Event}   event
+	     * @return {Object}
+	     */
+	  }, {
 	    key: 'getRelativeClickPosition',
 	    value: function getRelativeClickPosition(el, event) {
 	      el = el || _reactDom2['default'].findDOMNode(this);
@@ -148,6 +159,9 @@ module.exports =
 	      // Ensure we have a unqiue id we can keep track of
 	      click.id = Date.now();
 
+	      // Async remove click after it times out
+	      click.timeoutId = setTimeout(this.removeClick.bind(this, click), this.props.timeout);
+
 	      // Clone to prevent accidently changes
 	      var clicks = this.state.clicks.slice(0);
 
@@ -158,9 +172,6 @@ module.exports =
 	      this.setState({
 	        clicks: clicks
 	      });
-
-	      // Clean it up after it's gone
-	      setTimeout(this.removeClick.bind(this, click), this.props.timeout);
 
 	      if (typeof this.props.onClick === 'function') {
 	        this.props.onClick(event);
@@ -183,7 +194,6 @@ module.exports =
 	      });
 
 	      if (index > -1) {
-
 	        // Remove it
 	        clicks.splice(index, 1);
 
@@ -236,7 +246,7 @@ module.exports =
 	      return _react2['default'].createElement(
 	        this.props.tag,
 	        {
-	          className: 'highligh-click ' + (this.props.className ? this.props.className : ' '),
+	          className: 'highligh-click' + (this.props.className ? ' ' + this.props.className : ''),
 	          onClick: this.handleClick.bind(this) },
 	        this.renderHighlights(),
 	        this.props.children

@@ -1,8 +1,8 @@
 {
   "name": "react-highlight-click",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generates temporary click highlights",
-  "main": "es5/HighlightClick.js",
+  "main": "dist/HighlightClick.js",
   "scripts": {
     "test": "jest src/ --coverage",
     "build": "npm test && grunt build"
