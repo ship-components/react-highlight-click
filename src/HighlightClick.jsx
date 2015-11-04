@@ -8,6 +8,7 @@
 // Modules
 import React from 'react';
 import ReactDOM from 'react-dom';
+import assign from 'object-assign';
 
 export default class HighlightClick extends React.Component {
 
@@ -132,13 +133,29 @@ export default class HighlightClick extends React.Component {
   }
 
   /**
+   * Clone props and pass them from our parent
+   * @return {Object}
+   */
+  transferProps() {
+    let props = assign({}, this.props);
+    if (this.props.tag === 'a') {
+      // Don't pass this to our wrapper component
+      ['size', 'timeout', 'type'].forEach((prop) => {
+        delete props[prop];
+      });
+    }
+    return props;
+  }
+
+  /**
    * This component is mostly a wrapper.
    * @return {React}
    */
   render() {
     return (
       <this.props.tag
-        className={'highligh-click' + (this.props.className ? ' ' + this.props.className : '')}
+        {...this.transferProps()}
+        className={'highlight-click' + (this.props.className ? ' ' + this.props.className : '')}
         onClick={this.handleClick.bind(this)}>
           {this.renderHighlights()}
 
