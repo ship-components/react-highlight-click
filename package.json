@@ -1,6 +1,6 @@
 {
   "name": "react-highlight-click",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generates temporary click highlights",
   "main": "dist/HighlightClick.js",
   "scripts": {
@@ -37,6 +37,7 @@
     "grunt-webpack": "^1.0.11",
     "jest-cli": "^0.5.8",
     "jit-grunt": "^0.9.1",
+    "object-assign": "^4.0.1",
     "package-banner": "^0.1.0",
     "react": "^0.14.0-rc1",
     "react-addons-test-utils": "^0.14.0-rc1",
