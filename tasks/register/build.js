@@ -8,7 +8,6 @@
  */
 module.exports = function(grunt) {
   grunt.registerTask('build', [
-    'webpack:dev',
-    'webpack:dist'
+    'webpack:dev'
   ]);
 };
