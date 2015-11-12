@@ -59,43 +59,48 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/** ****************************************************************************
-	 * HighlightClick
-	 *
-	 * @author       Isaac Suttell <isaac_suttell@playstation.sony.com>
-	 * @file         Show expanding circles where the user clicks
-	 ******************************************************************************/
-
-	// Modules
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /** ****************************************************************************
+	                                                                                                                                                                                                                                                                   * HighlightClick
+	                                                                                                                                                                                                                                                                   *
+	                                                                                                                                                                                                                                                                   * @author       Isaac Suttell <isaac_suttell@playstation.sony.com>
+	                                                                                                                                                                                                                                                                   * @file         Show expanding circles where the user clicks
+	                                                                                                                                                                                                                                                                   ******************************************************************************/
+
+	// Modules
+
+	// CSS Modules
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _react = __webpack_require__(2);
+	var _react = __webpack_require__(3);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(3);
+	var _reactDom = __webpack_require__(4);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _objectAssign = __webpack_require__(1);
+	var _objectAssign = __webpack_require__(2);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+	var _highlightClick = __webpack_require__(1);
+
+	var _highlightClick2 = _interopRequireDefault(_highlightClick);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var HighlightClick = (function (_React$Component) {
 	  _inherits(HighlightClick, _React$Component);
@@ -108,17 +113,13 @@ module.exports =
 	  function HighlightClick(props) {
 	    _classCallCheck(this, HighlightClick);
 
-	    _get(Object.getPrototypeOf(HighlightClick.prototype), 'constructor', this).call(this, props);
-	    this.state = {
+	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(HighlightClick).call(this, props));
+
+	    _this2.state = {
 	      clicks: []
 	    };
+	    return _this2;
 	  }
-
-	  /**
-	   * Based on jQuery. Get the elements offset to the top/left of page
-	   * @param    {Node}    el    [description]
-	   * @static
-	   */
 
 	  /**
 	   * Clean up any async timeouts when we unount
@@ -138,10 +139,11 @@ module.exports =
 	     * @param  {Event}   event
 	     * @return {Object}
 	     */
+
 	  }, {
 	    key: 'getRelativeClickPosition',
 	    value: function getRelativeClickPosition(el, event) {
-	      el = el || _reactDom2['default'].findDOMNode(this);
+	      el = el || _reactDom2.default.findDOMNode(this);
 	      var elOffset = HighlightClick.getElementOffset(el);
 	      return {
 	        top: event.pageY - elOffset.top,
@@ -154,10 +156,11 @@ module.exports =
 	     * @param  {Event} event
 	     * @return {[type]}       [description]
 	     */
+
 	  }, {
 	    key: 'handleClick',
 	    value: function handleClick(event) {
-	      var el = _reactDom2['default'].findDOMNode(this);
+	      var el = _reactDom2.default.findDOMNode(this);
 
 	      // Figure out where the click is
 	      var click = this.getRelativeClickPosition(el, event);
@@ -188,6 +191,7 @@ module.exports =
 	     * Remove the click from the state since we don't need it anymore
 	     * @param  {Object} click
 	     */
+
 	  }, {
 	    key: 'removeClick',
 	    value: function removeClick(click) {
@@ -214,6 +218,7 @@ module.exports =
 	     * Render any active highlights
 	     * @return {React}
 	     */
+
 	  }, {
 	    key: 'renderHighlights',
 	    value: function renderHighlights() {
@@ -224,7 +229,9 @@ module.exports =
 	      }
 
 	      return this.state.clicks.map(function (click) {
-	        var styles = {};
+	        var styles = {
+	          position: 'absolute'
+	        };
 
 	        // Size
 	        styles.width = _this.props.size;
@@ -233,11 +240,14 @@ module.exports =
 	        // Center
 	        styles.left = (click.left || 0) - _this.props.size / 2;
 	        styles.top = (click.top || 0) - _this.props.size / 2;
-
-	        return _react2['default'].createElement('div', {
+	        return _react2.default.createElement('div', {
 	          key: click.id,
 	          style: styles,
-	          className: 'highlight-click--click'
+	          className: 'highlight-click--click ' + _highlightClick2.default.click,
+	          __source: {
+	            fileName: '../../../../eslint-loader/index.js!/Users/Isaac/src/react-highlight-click/src/HighlightClick.jsx',
+	            lineNumber: 130
+	          }
 	        });
 	      });
 	    }
@@ -246,10 +256,11 @@ module.exports =
 	     * Clone props and pass them from our parent
 	     * @return {Object}
 	     */
+
 	  }, {
 	    key: 'transferProps',
 	    value: function transferProps() {
-	      var props = (0, _objectAssign2['default'])({}, this.props);
+	      var props = (0, _objectAssign2.default)({}, this.props);
 	      if (this.props.tag === 'a') {
 	        // Don't pass this to our wrapper component
 	        ['size', 'timeout', 'type'].forEach(function (prop) {
@@ -263,14 +274,19 @@ module.exports =
 	     * This component is mostly a wrapper.
 	     * @return {React}
 	     */
+
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2['default'].createElement(
+	      return _react2.default.createElement(
 	        this.props.tag,
 	        _extends({}, this.transferProps(), {
-	          className: 'highlight-click' + (this.props.className ? ' ' + this.props.className : ''),
-	          onClick: this.handleClick.bind(this) }),
+	          className: 'highlight-click ' + _highlightClick2.default.container + ' ' + (this.props.className ? ' ' + this.props.className : ''),
+	          onClick: this.handleClick.bind(this), __source: {
+	            fileName: '../../../../eslint-loader/index.js!/Users/Isaac/src/react-highlight-click/src/HighlightClick.jsx',
+	            lineNumber: 160
+	          }
+	        }),
 	        this.renderHighlights(),
 	        this.props.children
 	      );
@@ -278,9 +294,15 @@ module.exports =
 	  }]);
 
 	  return HighlightClick;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = HighlightClick;
+	/**
+	 * Based on jQuery. Get the elements offset to the top/left of page
+	 * @param    {Node}    el    [description]
+	 * @static
+	 */
+
+	exports.default = HighlightClick;
 	HighlightClick.getElementOffset = function getElementOffset(el) {
 	  var doc = el && el.ownerDocument;
 
@@ -304,11 +326,11 @@ module.exports =
 	 * @static
 	 */
 	HighlightClick.propTypes = {
-	  onClick: _react2['default'].PropTypes.func,
-	  className: _react2['default'].PropTypes.string,
-	  tag: _react2['default'].PropTypes.string,
-	  size: _react2['default'].PropTypes.number,
-	  timeout: _react2['default'].PropTypes.number
+	  onClick: _react2.default.PropTypes.func,
+	  className: _react2.default.PropTypes.string,
+	  tag: _react2.default.PropTypes.string,
+	  size: _react2.default.PropTypes.number,
+	  timeout: _react2.default.PropTypes.number
 	};
 
 	/**
@@ -322,61 +344,28 @@ module.exports =
 	  size: 100,
 	  timeout: 500
 	};
-	module.exports = exports['default'];
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
-	/* eslint-disable no-unused-vars */
-	'use strict';
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-	function toObject(val) {
-		if (val === null || val === undefined) {
-			throw new TypeError('Object.assign cannot be called with null or undefined');
-		}
-
-		return Object(val);
-	}
-
-	module.exports = Object.assign || function (target, source) {
-		var from;
-		var to = toObject(target);
-		var symbols;
-
-		for (var s = 1; s < arguments.length; s++) {
-			from = Object(arguments[s]);
-
-			for (var key in from) {
-				if (hasOwnProperty.call(from, key)) {
-					to[key] = from[key];
-				}
-			}
-
-			if (Object.getOwnPropertySymbols) {
-				symbols = Object.getOwnPropertySymbols(from);
-				for (var i = 0; i < symbols.length; i++) {
-					if (propIsEnumerable.call(from, symbols[i])) {
-						to[symbols[i]] = from[symbols[i]];
-					}
-				}
-			}
-		}
-
-		return to;
-	};
-
+	// removed by extract-text-webpack-plugin
+	module.exports = {"container":"highlight-click--container","click":"highlight-click--click","zoom-and-fade":"highlight-click--zoom-and-fade"};
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = require("react");
+	module.exports = require("object-assign");
 
 /***/ },
 /* 3 */
+/***/ function(module, exports) {
+
+	module.exports = require("react");
+
+/***/ },
+/* 4 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom");

@@ -1,6 +1,6 @@
 {
   "name": "react-highlight-click",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
   "scripts": {
