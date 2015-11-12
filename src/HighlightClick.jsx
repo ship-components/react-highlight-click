@@ -110,7 +110,7 @@ export default class HighlightClick extends React.Component {
    * @return {React}
    */
   renderHighlights() {
-    if (!this.state.clicks.length) {
+    if (this.props.disabled || !this.state.clicks.length) {
       return null;
     }
 
@@ -162,7 +162,6 @@ export default class HighlightClick extends React.Component {
         className={'highlight-click ' + css.container + ' ' + (this.props.className ? ' ' + this.props.className : '')}
         onClick={this.handleClick.bind(this)}>
           {this.renderHighlights()}
-
           {this.props.children}
       </this.props.tag>
     );
@@ -210,6 +209,7 @@ HighlightClick.propTypes = {
  * @static
  */
 HighlightClick.defaultProps = {
+  disabled: false,
   className: '',
   tag: 'div',
   size: 100,
