@@ -10,6 +10,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import assign from 'object-assign';
 
+// CSS Modules
+import css from './highlight-click.css';
+
 export default class HighlightClick extends React.Component {
 
   /**
@@ -112,7 +115,9 @@ export default class HighlightClick extends React.Component {
     }
 
     return this.state.clicks.map((click) => {
-      let styles = {};
+      let styles = {
+        position: 'absolute'
+      };
 
       // Size
       styles.width = this.props.size;
@@ -121,12 +126,11 @@ export default class HighlightClick extends React.Component {
       // Center
       styles.left = (click.left || 0) - (this.props.size / 2);
       styles.top = (click.top || 0) - (this.props.size / 2);
-
       return (
         <div
           key={click.id}
           style={styles}
-          className='highlight-click--click'
+          className={'highlight-click--click ' + css.click}
         />
       );
     });
@@ -155,7 +159,7 @@ export default class HighlightClick extends React.Component {
     return (
       <this.props.tag
         {...this.transferProps()}
-        className={'highlight-click' + (this.props.className ? ' ' + this.props.className : '')}
+        className={'highlight-click ' + css.container + ' ' + (this.props.className ? ' ' + this.props.className : '')}
         onClick={this.handleClick.bind(this)}>
           {this.renderHighlights()}
 

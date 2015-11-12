@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
-const HighlightClick = require('../HighlightClick');
+const HighlightClick = require('../HighlightClick').default;
 const noOp = function() {};
 
 describe('HighlightClick', function() {

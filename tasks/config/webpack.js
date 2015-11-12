@@ -11,6 +11,7 @@
 
 module.exports = function(grunt) {
   var PackageBanner = require('package-banner');
+  var ExtractTextPlugin = require('extract-text-webpack-plugin');
   var webpack = require('webpack');
   var path = require('path');
 
@@ -37,7 +38,8 @@ module.exports = function(grunt) {
 
       externals: {
         'react': true,
-        'react-dom': true
+        'react-dom': true,
+        'object-assign' : true
       },
 
       stats: {
@@ -58,6 +60,14 @@ module.exports = function(grunt) {
             test: /\.jsx?|\.es6$/,
             exclude: /(node_modules|bower_components)/,
             loader: 'babel'
+          },
+          // CSS Modules
+          {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract(
+              'style-loader',
+              'css-loader?modules&importLoaders=1&localIdentName=[name]--[local]!postcss-loader'
+            )
           }
         ]
       },
@@ -72,6 +82,9 @@ module.exports = function(grunt) {
       },
 
       plugins: [
+        new ExtractTextPlugin('[name].css', {
+          allChunks: true
+        }),
         new webpack.optimize.OccurenceOrderPlugin(true),
         // new webpack.EnvironmentPlugin(['NODE_ENV']),
         new webpack.BannerPlugin(banner)
@@ -87,6 +100,9 @@ module.exports = function(grunt) {
       },
 
       plugins: [
+        new ExtractTextPlugin('[name].min.css', {
+          allChunks: true
+        }),
         new webpack.optimize.OccurenceOrderPlugin(true),
         // new webpack.EnvironmentPlugin(['NODE_ENV']),
         new webpack.optimize.UglifyJsPlugin()
