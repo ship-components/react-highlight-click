@@ -94,7 +94,7 @@ export default class HighlightClick extends React.Component {
     // Find it
     let index = clicks.findIndex((item) => item.id === click.id);
 
-    if(index > -1) {
+    if (index > -1) {
       // Remove it
       clicks.splice(index, 1);
 
@@ -148,6 +148,10 @@ export default class HighlightClick extends React.Component {
         delete props[prop];
       });
     }
+
+    // Make sure we go through our own handler first
+    delete props.onClick;
+
     return props;
   }
 
