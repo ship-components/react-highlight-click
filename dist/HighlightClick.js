@@ -1,15 +1,15 @@
 /*!
- *                               __            .__    .__       .__    .__  .__       .__     __                   .__  .__        __    
- * _______   ____ _____    _____/  |_          |  |__ |__| ____ |  |__ |  | |__| ____ |  |___/  |_            ____ |  | |__| ____ |  | __
- * \_  __ \_/ __ \\__  \ _/ ___\   __\  ______ |  |  \|  |/ ___\|  |  \|  | |  |/ ___\|  |  \   __\  ______ _/ ___\|  | |  |/ ___\|  |/ /
- *  |  | \/\  ___/ / __ \\  \___|  |   /_____/ |   Y  \  / /_/  >   Y  \  |_|  / /_/  >   Y  \  |   /_____/ \  \___|  |_|  \  \___|    < 
- *  |__|    \___  >____  /\___  >__|           |___|  /__\___  /|___|  /____/__\___  /|___|  /__|            \___  >____/__|\___  >__|_ \
- *              \/     \/     \/                    \/  /_____/      \/       /_____/      \/                    \/             \/     \/
- * react-highlight-click 0.1.3
+ *        .__    .__                                                                          __                   .__    .__       .__    .__  .__       .__     __                   .__  .__        __    
+ *   _____|  |__ |__|_____             ____  ____   _____ ______   ____   ____   ____   _____/  |_  ______         |  |__ |__| ____ |  |__ |  | |__| ____ |  |___/  |_            ____ |  | |__| ____ |  | __
+ *  /  ___/  |  \|  \____ \   ______ _/ ___\/  _ \ /     \\____ \ /  _ \ /    \_/ __ \ /    \   __\/  ___/  ______ |  |  \|  |/ ___\|  |  \|  | |  |/ ___\|  |  \   __\  ______ _/ ___\|  | |  |/ ___\|  |/ /
+ *  \___ \|   Y  \  |  |_> > /_____/ \  \__(  <_> )  Y Y  \  |_> >  <_> )   |  \  ___/|   |  \  |  \___ \  /_____/ |   Y  \  / /_/  >   Y  \  |_|  / /_/  >   Y  \  |   /_____/ \  \___|  |_|  \  \___|    < 
+ * /____  >___|  /__|   __/           \___  >____/|__|_|  /   __/ \____/|___|  /\___  >___|  /__| /____  >         |___|  /__\___  /|___|  /____/__\___  /|___|  /__|            \___  >____/__|\___  >__|_ \
+ *      \/     \/   |__|                  \/            \/|__|               \/     \/     \/          \/               \/  /_____/      \/       /_____/      \/                    \/             \/     \/
+ * ship-components-highlight-click 0.1.4
  * Description: Generates temporary click highlights
  * Author: Isaac Suttell
- * Homepage: https://github.com/ship-components/react-highlight-click/issues#readme
- * Bugs: https://github.com/ship-components/react-highlight-click/issues
+ * Homepage: https://github.com/ship-components/ship-components-highlight-click/issues#readme
+ * Bugs: https://github.com/ship-components/ship-components-highlight-click/issues
  * License: MIT
  */
 module.exports =
@@ -61,22 +61,13 @@ module.exports =
 
 	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /** ****************************************************************************
-	                                                                                                                                                                                                                                                                   * HighlightClick
-	                                                                                                                                                                                                                                                                   *
-	                                                                                                                                                                                                                                                                   * @author       Isaac Suttell <isaac_suttell@playstation.sony.com>
-	                                                                                                                                                                                                                                                                   * @file         Show expanding circles where the user clicks
-	                                                                                                                                                                                                                                                                   ******************************************************************************/
-
-	// Modules
-
-	// CSS Modules
-
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	var _react = __webpack_require__(3);
 
@@ -100,7 +91,16 @@ module.exports =
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /** ****************************************************************************
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * HighlightClick
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author       Isaac Suttell <isaac_suttell@playstation.sony.com>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @file         Show expanding circles where the user clicks
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ******************************************************************************/
+
+	// Modules
+
+	// CSS Modules
 
 	var HighlightClick = (function (_React$Component) {
 	  _inherits(HighlightClick, _React$Component);
@@ -113,12 +113,12 @@ module.exports =
 	  function HighlightClick(props) {
 	    _classCallCheck(this, HighlightClick);
 
-	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(HighlightClick).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(HighlightClick).call(this, props));
 
-	    _this2.state = {
+	    _this.state = {
 	      clicks: []
 	    };
-	    return _this2;
+	    return _this;
 	  }
 
 	  /**
@@ -222,7 +222,7 @@ module.exports =
 	  }, {
 	    key: 'renderHighlights',
 	    value: function renderHighlights() {
-	      var _this = this;
+	      var _this2 = this;
 
 	      if (this.props.disabled || !this.state.clicks.length) {
 	        return null;
@@ -234,20 +234,16 @@ module.exports =
 	        };
 
 	        // Size
-	        styles.width = _this.props.size;
-	        styles.height = _this.props.size;
+	        styles.width = _this2.props.size;
+	        styles.height = _this2.props.size;
 
 	        // Center
-	        styles.left = (click.left || 0) - _this.props.size / 2;
-	        styles.top = (click.top || 0) - _this.props.size / 2;
+	        styles.left = (click.left || 0) - _this2.props.size / 2;
+	        styles.top = (click.top || 0) - _this2.props.size / 2;
 	        return _react2.default.createElement('div', {
 	          key: click.id,
 	          style: styles,
-	          className: 'highlight-click--click ' + _highlightClick2.default.click,
-	          __source: {
-	            fileName: '../../../../eslint-loader/index.js!/Users/Isaac/src/react-highlight-click/src/HighlightClick.jsx',
-	            lineNumber: 130
-	          }
+	          className: 'highlight-click--click ' + _highlightClick2.default.click
 	        });
 	      });
 	    }
@@ -267,6 +263,10 @@ module.exports =
 	          delete props[prop];
 	        });
 	      }
+
+	      // Make sure we go through our own handler first
+	      delete props.onClick;
+
 	      return props;
 	    }
 
@@ -282,11 +282,7 @@ module.exports =
 	        this.props.tag,
 	        _extends({}, this.transferProps(), {
 	          className: 'highlight-click ' + _highlightClick2.default.container + ' ' + (this.props.className ? ' ' + this.props.className : ''),
-	          onClick: this.handleClick.bind(this), __source: {
-	            fileName: '../../../../eslint-loader/index.js!/Users/Isaac/src/react-highlight-click/src/HighlightClick.jsx',
-	            lineNumber: 160
-	          }
-	        }),
+	          onClick: this.handleClick.bind(this) }),
 	        this.renderHighlights(),
 	        this.props.children
 	      );
