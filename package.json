@@ -1,5 +1,5 @@
 {
-  "name": "react-highlight-click",
+  "name": "ship-components-highlight-click",
   "version": "0.1.4",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ship-components/react-highlight-click.git"
+    "url": "git+https://github.com/ship-components/ship-components-highlight-click.git"
   },
   "keywords": [
     "react"
@@ -17,9 +17,9 @@
   "author": "Isaac Suttell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ship-components/react-highlight-click/issues"
+    "url": "https://github.com/ship-components/ship-components-highlight-click/issues"
   },
-  "homepage": "https://github.com/ship-components/react-highlight-click/issues#readme",
+  "homepage": "https://github.com/ship-components/ship-components-highlight-click/issues#readme",
   "devDependencies": {
     "babel-core": "^6.0.15",
     "babel-eslint": "^4.1.5",
