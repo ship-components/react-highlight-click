@@ -34,6 +34,10 @@ export default class Button extends Component {
 1. `npm install`
 2. `npm test`
 
+## History
+* 0.1.5 - Fixed invalid props warning and other issues related to renaming
+* 0.1.4 - Initial
+
 ## License
 The MIT License (MIT)
 
