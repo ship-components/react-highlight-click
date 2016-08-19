@@ -8,7 +8,6 @@
 // Modules
 import React from 'react';
 import ReactDOM from 'react-dom';
-import assign from 'object-assign';
 
 // CSS Modules
 import css from './highlight-click.css';
@@ -24,6 +23,7 @@ export default class HighlightClick extends React.Component {
     this.state = {
       clicks: []
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   /**
@@ -141,16 +141,12 @@ export default class HighlightClick extends React.Component {
    * @return {Object}
    */
   transferProps() {
-    let props = assign({}, this.props);
-    if (this.props.tag === 'a') {
-      // Don't pass this to our wrapper component
-      ['size', 'timeout', 'type'].forEach((prop) => {
-        delete props[prop];
-      });
-    }
+    let props = Object.assign({}, this.props);
 
-    // Make sure we go through our own handler first
-    delete props.onClick;
+    // Don't pass these to our component
+    ['size', 'timeout', 'type', 'disabled', 'tag'].forEach(prop => {
+      delete props[prop];
+    });
 
     return props;
   }
@@ -164,7 +160,8 @@ export default class HighlightClick extends React.Component {
       <this.props.tag
         {...this.transferProps()}
         className={'highlight-click ' + css.container + ' ' + (this.props.className ? ' ' + this.props.className : '')}
-        onClick={this.handleClick.bind(this)}>
+        onClick={this.handleClick}
+      >
           {this.renderHighlights()}
           {this.props.children}
       </this.props.tag>
