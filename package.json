@@ -23,7 +23,7 @@
   "devDependencies": {
     "babel-core": "^6.0.15",
     "babel-eslint": "^4.1.8",
-    "babel-jest": "^6.0.1",
+    "babel-jest": "^14.1.0",
     "babel-loader": "^6.1.0",
     "babel-plugin-transform-es2015-classes": "^6.9.0",
     "babel-plugin-transform-runtime": "^6.9.0",
@@ -41,7 +41,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-eslint": "^17.1.0",
     "grunt-webpack": "^1.0.11",
-    "jest-cli": "^0.5.8",
+    "jest-cli": "^14.1.0",
     "jit-grunt": "^0.9.1",
     "package-banner": "^0.1.0",
     "postcss-loader": "^0.8.0",
