@@ -6,5 +6,5 @@ languages:
 exclude_paths:
 - "Gruntfile.js"
 - "tasks/*"
-- "es5/*"
+- "dist/*"
 - "**-test.js"

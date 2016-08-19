@@ -1,16 +1,17 @@
-# react-highlight-click
+# ship-components-highlight-click
 [React](http://facebook.github.io/react/) component that generates a visual hightlight of a click. Exports a commonjs module that can be used with [webpack](http://webpack.github.io/) or [browserify](http://browserify.org/). Source is in ES6 and is compiled down to ES5 using [Babel](https://babeljs.io/).
 
-[![Build Status](http://img.shields.io/travis/ship-components/react-highlight-click/master.svg?style=flat)](https://travis-ci.org/ship-components/react-highlight-click)
-[![Code Quality](https://img.shields.io/codeclimate/github/ship-components/react-highlight-click.svg?style=flat)](https://codeclimate.com/github/ship-components/react-highlight-click)
-[![Code Coverage](https://img.shields.io/codeclimate/coverage/github/ship-components/react-highlight-click.svg?style=flat)](https://codeclimate.com/github/ship-components/react-highlight-click)
+[![npm](https://img.shields.io/npm/v/ship-components-highlight-click.svg?maxAge=2592000)](https://www.npmjs.com/package/ship-components-highlight-click)
+[![Build Status](http://img.shields.io/travis/ship-components/ship-components-highlight-click/master.svg?style=flat)](https://travis-ci.org/ship-components/ship-components-highlight-click)
+[![Code Quality](https://img.shields.io/codeclimate/github/ship-components/ship-components-highlight-click.svg?style=flat)](https://codeclimate.com/github/ship-components/ship-components-highlight-click)
+[![Code Coverage](https://img.shields.io/codeclimate/coverage/github/ship-components/ship-components-highlight-click.svg?style=flat)](https://codeclimate.com/github/ship-components/ship-components-highlight-click)
 
 ## Usage
 
 ### With Babel (Recommended)
 The component is written using ES6/JSX therefore Babel is required to directly use it. The below example is based on using [webpack](http://webpack.github.io/) and [babel-loader](https://github.com/babel/babel-loader).
 ```js
-import { Component } from 'react';
+import React, { Component } from 'react';
 import HighlightClick from 'react-highlight-click';
 
 export default class Button extends Component {
