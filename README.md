@@ -12,7 +12,7 @@
 The component is written using ES6/JSX therefore Babel is required to directly use it. The below example is based on using [webpack](http://webpack.github.io/) and [babel-loader](https://github.com/babel/babel-loader).
 ```js
 import React, { Component } from 'react';
-import HighlightClick from 'react-highlight-click';
+import HighlightClick from 'ship-components-highlight-click';
 
 export default class Button extends Component {
   render() {
@@ -35,6 +35,7 @@ export default class Button extends Component {
 2. `npm test`
 
 ## History
+* 0.1.6 - Update to react >= 15
 * 0.1.5 - Fixed invalid props warning and other issues related to renaming
 * 0.1.4 - Initial
 

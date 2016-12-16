@@ -1,6 +1,6 @@
 {
   "name": "ship-components-highlight-click",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
   "scripts": {
@@ -45,9 +45,9 @@
     "jit-grunt": "^0.9.1",
     "package-banner": "^0.1.0",
     "postcss-loader": "^0.8.0",
-    "react": "^0.14.2",
-    "react-addons-test-utils": "^0.14.2",
-    "react-dom": "^0.14.2",
+    "react": ">=15.0.0",
+    "react-addons-test-utils": ">=15.0.0",
+    "react-dom": ">=15.0.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.1",
     "webpack-dev-server": "^1.10.1"
