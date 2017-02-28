@@ -5,7 +5,7 @@
  *  \___ \|   Y  \  |  |_> > /_____/ \  \__(  <_> )  Y Y  \  |_> >  <_> )   |  \  ___/|   |  \  |  \___ \  /_____/ |   Y  \  / /_/  >   Y  \  |_|  / /_/  >   Y  \  |   /_____/ \  \___|  |_|  \  \___|    < 
  * /____  >___|  /__|   __/           \___  >____/|__|_|  /   __/ \____/|___|  /\___  >___|  /__| /____  >         |___|  /__\___  /|___|  /____/__\___  /|___|  /__|            \___  >____/__|\___  >__|_ \
  *      \/     \/   |__|                  \/            \/|__|               \/     \/     \/          \/               \/  /_____/      \/       /_____/      \/                    \/             \/     \/
- * ship-components-highlight-click 0.1.4
+ * ship-components-highlight-click 0.1.6
  * Description: Generates temporary click highlights
  * Author: Isaac Suttell
  * Homepage: https://github.com/ship-components/ship-components-highlight-click/issues#readme
@@ -67,19 +67,15 @@ module.exports =
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(3);
+	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(4);
+	var _reactDom = __webpack_require__(3);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	var _objectAssign = __webpack_require__(2);
-
-	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
 	var _highlightClick = __webpack_require__(1);
 
@@ -100,30 +96,33 @@ module.exports =
 
 	// Modules
 
+
 	// CSS Modules
 
-	var HighlightClick = (function (_React$Component) {
+
+	var HighlightClick = function (_React$Component) {
 	  _inherits(HighlightClick, _React$Component);
 
 	  /**
 	   * Wrapper component that generates click highlights when the user clicks inside it
 	   * @param  {Object} props
 	   */
-
 	  function HighlightClick(props) {
 	    _classCallCheck(this, HighlightClick);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(HighlightClick).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (HighlightClick.__proto__ || Object.getPrototypeOf(HighlightClick)).call(this, props));
 
 	    _this.state = {
 	      clicks: []
 	    };
+	    _this.handleClick = _this.handleClick.bind(_this);
 	    return _this;
 	  }
 
 	  /**
 	   * Clean up any async timeouts when we unount
 	   */
+
 
 	  _createClass(HighlightClick, [{
 	    key: 'componentWillUnmount',
@@ -256,16 +255,12 @@ module.exports =
 	  }, {
 	    key: 'transferProps',
 	    value: function transferProps() {
-	      var props = (0, _objectAssign2.default)({}, this.props);
-	      if (this.props.tag === 'a') {
-	        // Don't pass this to our wrapper component
-	        ['size', 'timeout', 'type'].forEach(function (prop) {
-	          delete props[prop];
-	        });
-	      }
+	      var props = Object.assign({}, this.props);
 
-	      // Make sure we go through our own handler first
-	      delete props.onClick;
+	      // Don't pass these to our component
+	      ['size', 'timeout', 'type', 'disabled', 'tag'].forEach(function (prop) {
+	        delete props[prop];
+	      });
 
 	      return props;
 	    }
@@ -282,7 +277,8 @@ module.exports =
 	        this.props.tag,
 	        _extends({}, this.transferProps(), {
 	          className: 'highlight-click ' + _highlightClick2.default.container + ' ' + (this.props.className ? ' ' + this.props.className : ''),
-	          onClick: this.handleClick.bind(this) }),
+	          onClick: this.handleClick
+	        }),
 	        this.renderHighlights(),
 	        this.props.children
 	      );
@@ -290,13 +286,14 @@ module.exports =
 	  }]);
 
 	  return HighlightClick;
-	})(_react2.default.Component);
+	}(_react2.default.Component);
 
 	/**
 	 * Based on jQuery. Get the elements offset to the top/left of page
 	 * @param    {Node}    el    [description]
 	 * @static
 	 */
+
 
 	exports.default = HighlightClick;
 	HighlightClick.getElementOffset = function getElementOffset(el) {
@@ -353,16 +350,10 @@ module.exports =
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = require("object-assign");
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
 	module.exports = require("react");
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom");
