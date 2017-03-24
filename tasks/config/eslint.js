@@ -10,6 +10,11 @@
  */
 module.exports = function(grunt) {
   grunt.config.set('eslint', {
-    target: ['src/**/*.+(jsx?|es6)']
+    target: ['src/*.js', 'src/*.jsx' , 'src/*.es6'],
+    options: {
+      maxWarnings: 0
+    }
   });
+
+  grunt.loadNpmTasks('grunt-eslint');
 };

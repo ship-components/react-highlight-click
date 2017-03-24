@@ -1,8 +1,8 @@
 languages:
-   Ruby: false
-   JavaScript: true
-   Python: false
-   PHP: false
+  Ruby: false
+  JavaScript: true
+  Python: false
+  PHP: false
 exclude_paths:
 - "Gruntfile.js"
 - "tasks/*"
