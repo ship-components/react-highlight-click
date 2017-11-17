@@ -1,6 +1,6 @@
 {
   "name": "ship-components-highlight-click",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
   "scripts": {
