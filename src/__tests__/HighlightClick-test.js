@@ -3,7 +3,7 @@ jest.useFakeTimers();
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
+import TestUtils from 'react-dom/test-utils';
 
 const HighlightClick = require('../HighlightClick').default;
 const noOp = function() {};
