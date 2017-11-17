@@ -7,6 +7,7 @@
 
 // Modules
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 // CSS Modules
@@ -197,11 +198,11 @@ HighlightClick.getElementOffset = function getElementOffset(el) {
  * @static
  */
 HighlightClick.propTypes = {
-  onClick: React.PropTypes.func,
-  className: React.PropTypes.string,
-  tag: React.PropTypes.string,
-  size: React.PropTypes.number,
-  timeout: React.PropTypes.number
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  tag: PropTypes.string,
+  size: PropTypes.number,
+  timeout: PropTypes.number
 };
 
 /**
