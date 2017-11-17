@@ -36,6 +36,7 @@ export default class Button extends Component {
 2. `npm test`
 
 ## History
+* 0.3.0 - Update babel preset, prop-types, Travis node versions, react-dom/test-utils
 * 0.2.0 - Fixes tests to pass, adds coveralls, Travis CI and ESLint script
 * 0.1.6 - Update to react >= 15
 * 0.1.5 - Fixed invalid props warning and other issues related to renaming

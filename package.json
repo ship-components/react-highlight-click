@@ -32,6 +32,10 @@
     {
       "name": "Sepand Assadi",
       "email": "sepand.assadi@sony.com"
+    },
+    {
+      "name": "Chris Orescan",
+      "email": "chris.orescan@sony.com"
     }
   ],
   "devDependencies": {
