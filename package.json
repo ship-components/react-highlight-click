@@ -1,6 +1,6 @@
 {
   "name": "ship-components-highlight-click",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
   "scripts": {
@@ -16,7 +16,7 @@
   "keywords": [
     "react",
     "highlight-click",
-    "es2015"
+    "env"
   ],
   "author": "Isaac Suttell",
   "license": "MIT",
@@ -34,6 +34,10 @@
       "email": "sepand.assadi@sony.com"
     },
     {
+      "name": "Jared Boone",
+      "email": "jared.boone@gmail.com"
+    },
+    {
       "name": "Chris Orescan",
       "email": "chris.orescan@sony.com"
     }
@@ -43,7 +47,6 @@
     "babel-eslint": "^4.1.8",
     "babel-jest": "^14.1.0",
     "babel-loader": "^6.1.0",
-    "babel-plugin-transform-es2015-classes": "^6.9.0",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.11.1",
