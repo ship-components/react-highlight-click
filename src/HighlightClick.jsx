@@ -93,7 +93,7 @@ export default class HighlightClick extends React.Component {
     let clicks = this.state.clicks.slice(0);
 
     // Find it
-    let index = clicks.findIndex((item) => item.id === click.id);
+    let index = clicks.findIndex(item => item.id === click.id);
 
     if (index > -1) {
       // Remove it
@@ -145,7 +145,7 @@ export default class HighlightClick extends React.Component {
     let props = Object.assign({}, this.props);
 
     // Don't pass these to our component
-    ['size', 'timeout', 'type', 'disabled', 'tag'].forEach(prop => {
+    ['size', 'timeout', 'type', 'disabled', 'tag'].forEach((prop) => {
       delete props[prop];
     });
 
@@ -163,8 +163,8 @@ export default class HighlightClick extends React.Component {
         className={'highlight-click ' + css.container + ' ' + (this.props.className ? ' ' + this.props.className : '')}
         onClick={this.handleClick}
       >
-          {this.renderHighlights()}
-          {this.props.children}
+        {this.renderHighlights()}
+        {this.props.children}
       </this.props.tag>
     );
   }
@@ -187,10 +187,10 @@ HighlightClick.getElementOffset = function getElementOffset(el) {
   let docElem = doc.documentElement;
 
   return {
-    top: box.top + ( window.pageYOffset || docElem.scrollTop ) - ( docElem.clientTop || 0 ),
-    left: box.left + ( window.pageXOffset || docElem.scrollLeft ) - ( docElem.clientLeft || 0 )
+    top: box.top + (window.pageYOffset || docElem.scrollTop) - (docElem.clientTop || 0),
+    left: box.left + (window.pageXOffset || docElem.scrollLeft) - (docElem.clientLeft || 0)
   };
-}
+};
 
 /**
  * Expected Types
