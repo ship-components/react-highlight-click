@@ -10,13 +10,13 @@
  */
 
 module.exports = function(grunt) {
-  var PackageBanner = require('package-banner');
+  var ShipComponentsBanner = require('ship-components-banner');
   var ExtractTextPlugin = require('extract-text-webpack-plugin');
   var webpack = require('webpack');
   var path = require('path');
 
   var pkg = grunt.file.readJSON('package.json');
-  var banner = new PackageBanner({
+  var banner = new ShipComponentsBanner({
     pkg: pkg,
     wrap: false
   }).build();
