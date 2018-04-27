@@ -5,7 +5,7 @@
  *  \___ \|   Y  \  |  |_> > /_____/ \  \__(  <_> )  Y Y  \  |_> >  <_> )   |  \  ___/|   |  \  |  \___ \  /_____/ |   Y  \  / /_/  >   Y  \  |_|  / /_/  >   Y  \  |   /_____/ \  \___|  |_|  \  \___|    < 
  * /____  >___|  /__|   __/           \___  >____/|__|_|  /   __/ \____/|___|  /\___  >___|  /__| /____  >         |___|  /__\___  /|___|  /____/__\___  /|___|  /__|            \___  >____/__|\___  >__|_ \
  *      \/     \/   |__|                  \/            \/|__|               \/     \/     \/          \/               \/  /_____/      \/       /_____/      \/                    \/             \/     \/
- * ship-components-highlight-click 1.0.0
+ * ship-components-highlight-click 1.0.1
  * Description: Generates temporary click highlights
  * Author: Isaac Suttell
  * Homepage: https://github.com/ship-components/ship-components-highlight-click/issues#readme

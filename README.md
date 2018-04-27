@@ -36,6 +36,8 @@ export default class Button extends Component {
 2. `npm test`
 
 ## History
+* 1.0.1 - React 16 compatibility, fixed dependencies
+* 1.0.0 - Updated babel to env, switched eslint to a shared config
 * 0.3.0 - Update babel preset, prop-types, Travis node versions, react-dom/test-utils
 * 0.2.0 - Fixes tests to pass, adds coveralls, Travis CI and ESLint script
 * 0.1.6 - Update to react >= 15

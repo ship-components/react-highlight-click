@@ -1,13 +1,14 @@
 {
   "name": "ship-components-highlight-click",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates temporary click highlights",
   "main": "src/HighlightClick.jsx",
   "scripts": {
     "build": "npm run test && grunt build",
     "lint": "./node_modules/eslint/bin/eslint.js src/*.jsx",
     "test": "grunt lint && ./node_modules/jest-cli/bin/jest.js --coverage",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js -v"
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js -v",
+    "travis": "npm install --no-save trevor && trevor"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,12 @@
       "email": "chris.orescan@sony.com"
     }
   ],
+  "dependencies": {
+    "classnames": ">=2.0.0",
+    "prop-types": "^15.6.1",
+    "react": ">=15.6.2 || ^16",
+    "react-dom": ">=15.6.2 || ^16"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -68,9 +75,6 @@
     "jest-css-modules": "^1.1.0",
     "jit-grunt": "^0.9.1",
     "postcss-loader": "^0.8.0",
-    "prop-types": "^15.6.0",
-    "react": ">=15.6.2 <16",
-    "react-dom": ">=15.6.2 <16",
     "ship-components-banner": "^0.2.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.1",
